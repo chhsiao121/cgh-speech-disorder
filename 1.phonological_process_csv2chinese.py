@@ -7,9 +7,8 @@ import json
 
 WORDCARD = "data_0820word"
 DATE = "0820_0916"
-STATPATH = '/D/TWCC/work/cgh_2022/jsonmv/stat/' + \
-    WORDCARD+'/'+DATE+'/compareST_'+DATE+'.csv'
-SAVECSVPATH = '/D/TWCC/work/cgh_2022/jsonmv/stat/data_0820word/0820_0916/forsat.csv'
+STATPATH = '/D/TWCC/work/cgh_2022/jsonmv/stat/test/0820_0916/wordcard_BACKING/compareST_0820_0916.csv'
+SAVECSVPATH = '/D/TWCC/work/cgh_2022/jsonmv/stat/test/0820_0916/wordcard_BACKING/forsat.csv'
 
 class_dict = {
     "塞音化": 1,
@@ -48,6 +47,7 @@ for case in df_stat.columns.tolist():
         if not df_stat[case][wordcard]:
             pass
         listtmp = []
+        print(f"(case,wordcard) = ({case},{wordcard})")
         for aaa in df_stat[case][wordcard]:
             tmp = list(class_dict.keys())[list(class_dict.values()).index(aaa)]
             listtmp.append(tmp)
